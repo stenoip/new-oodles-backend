@@ -1,4 +1,2 @@
 FROM karust/openserp:latest
-
-# Bypasses the shell entirely and loads the flags natively
-ENTRYPOINT ["./openserp", "serve", "-a", "0.0.0.0"]
+CMD ["sh", "-c", "./openserp serve -a 0.0.0.0 -p ${PORT:-7000}"]
